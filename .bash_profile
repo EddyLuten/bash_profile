@@ -40,3 +40,11 @@ alias gR='git reset --soft HEAD~1'
 alias gRR='git reset --hard HEAD'
 alias ci='git commit -a'
 gB() { git checkout -b $1; }
+
+########## ruby / rails / etc.
+
+# check if rbenv is installed and init
+rbenv version >/dev/null
+if [ $? -eq 0 ]; then
+  eval "$(rbenv init -)"
+fi
