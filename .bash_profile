@@ -2,15 +2,35 @@
 
 export EDITOR='atom --wait'
 
+########## required tools
+
+brew --version >/dev/null
+if [ ! $? -eq 0 ]; then
+  echo 'Installing homebrew...'
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+wget -V -nv >/dev/null
+if [ ! $? -eq 0 ]; then
+  echo 'Installing wget...'
+  brew install wget
+fi
+
 ########## shell
+
+alias cd..='cd ..'
 alias cls='clear'
-alias ls='ls -FGAhp'
+alias ls='ls -f1 -FGahp'
 alias ll='ls -l'
 reload_profile() { source ~/.bash_profile; }
 
 ########## git
 
 git config --global core.editor 'atom --wait'
+git config --global color.ui true
+git config --global format.pretty oneline
+git config --global core.autocrl input
+git config --global core.fileMode true
 
 # git auto-completion
 if [ ! -f ~/git-completion.bash ]; then
@@ -30,7 +50,7 @@ source ~/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
-export PS1='\e[39m\u$(__git_ps1 " [\[\e[0;32m\]%s\[\e[0m\]]")\$ '
+export PS1="\[\033[38m\]\u\[\033[32m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] "
 
 # shortcuts
 alias gC='git checkout'
