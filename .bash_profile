@@ -22,6 +22,7 @@ alias cd..='cd ..'
 alias cls='clear'
 alias ls='ls -f1 -FGahp'
 alias ll='ls -l'
+alias t='cls;rake spec'
 reload_profile() { source ~/.bash_profile; }
 
 ########## git
