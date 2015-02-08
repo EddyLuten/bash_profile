@@ -14,7 +14,7 @@ reload_profile() { source ~/.bash_profile; }
 
 ########## git
 
-git config --global core.editor 'atom --wait'
+git config --global core.editor vim
 git config --global color.ui true
 git config --global format.pretty oneline
 git config --global core.autocrl input
