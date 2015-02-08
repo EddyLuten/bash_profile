@@ -1,20 +1,7 @@
 #!/bin/bash
 
-export EDITOR='atom --wait'
-
-########## required tools
-
-brew --version >/dev/null
-if [ ! $? -eq 0 ]; then
-  echo 'Installing homebrew...'
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-wget -V -nv >/dev/null
-if [ ! $? -eq 0 ]; then
-  echo 'Installing wget...'
-  brew install wget
-fi
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 ########## shell
 
@@ -54,13 +41,13 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export PS1="\[\033[38m\]\u\[\033[32m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] "
 
 # shortcuts
-alias gC='git checkout'
-alias gP='git pull'
+alias gc='git checkout'
+alias gp='git pull'
 alias gS='git status'
-alias gR='git reset --soft HEAD~1'
-alias gRR='git reset --hard HEAD'
+alias gr='git reset --soft HEAD~1'
+alias grr='git reset --hard HEAD'
 alias ci='git commit -a'
-gB() { git checkout -b $1; }
+gb() { git checkout -b $1; }
 
 ########## ruby / rails / etc.
 
