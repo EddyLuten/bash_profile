@@ -49,6 +49,19 @@ alias grr='git reset --hard HEAD'
 alias ci='git commit -a'
 gb() { git checkout -b $1; }
 
+# works like rm, but moves files to the trash
+alias trash='set -f;trash'
+trash() {
+  set +f
+  cp -pR $1 ~/.Trash/
+  rm -r $1
+}
+
+# empty the trash
+empty_trash() {
+  rm -r ~/.Trash/*
+}
+
 ########## ruby / rails / etc.
 
 # check if rbenv is installed and init
