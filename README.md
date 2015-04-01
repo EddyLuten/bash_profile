@@ -40,4 +40,6 @@ Something like:
 * `ci` - alias for `git commit -a`
 * `gb` - creates a new branch (first argument) and checks it out
 * `gd` - deletes a branch (first argument)
-
+* `gl` - lists all the local branches with their remotes and the last commit message
+* `gla` - lists all the branches (local + remote) with their remotes and the last commit message
+* `glr` - lists only remote branches with their last commit message

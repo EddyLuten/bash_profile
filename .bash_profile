@@ -55,6 +55,9 @@ alias grr='git reset --hard HEAD'
 alias ci='git commit -a'
 gb() { git checkout -b $1; }
 alias gd='git branch -D'
+alias gl='git branch -lvv'
+alias gla='git branch -avv'
+alias glr='git branch -rvv'
 
 # works like rm, but moves files to the trash
 alias trash='set -f;trash'
