@@ -19,8 +19,12 @@ git config --global color.ui true
 git config --global format.pretty oneline
 git config --global core.autocrl input
 git config --global core.fileMode true
+
+# aliases
 git config --global alias.incoming "!(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})"
 git config --global alias.outgoing "!(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)"
+git config --global alias.dirty-branches '!(git branch --merged master | grep -v master)'
+git config --global alias.clean-branches '!(git branch --merged master | grep -v master | xargs -n 1 git branch -d)'
  
 # git auto-completion
 if [ ! -f ~/git-completion.bash ]; then
@@ -50,6 +54,7 @@ alias gr='git reset --soft HEAD~1'
 alias grr='git reset --hard HEAD'
 alias ci='git commit -a'
 gb() { git checkout -b $1; }
+alias gd='git branch -D'
 
 # works like rm, but moves files to the trash
 alias trash='set -f;trash'
