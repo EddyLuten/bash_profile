@@ -19,7 +19,9 @@ git config --global color.ui true
 git config --global format.pretty oneline
 git config --global core.autocrl input
 git config --global core.fileMode true
-
+git config --global alias.incoming "!(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})"
+git config --global alias.outgoing "!(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)"
+ 
 # git auto-completion
 if [ ! -f ~/git-completion.bash ]; then
   echo 'Downloading: git-completion.bash...'
