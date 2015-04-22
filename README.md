@@ -33,6 +33,7 @@ Something like:
 * `dirty-branches` - shows which branches are already merged into master and can be deleted
 * `clean-branches` - deletes the dirty branches
 * `gc` - alias for `git checkout`
+* `gcm` - alias for `git checkout master`
 * `gp` - alias for `git pull`
 * `gs` - alias for `git status`
 * `gr` - undoes the latest local commit and stages the files

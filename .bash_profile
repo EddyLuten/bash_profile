@@ -16,7 +16,7 @@ reload_profile() { source ~/.bash_profile; }
 
 git config --global core.editor vim
 git config --global color.ui true
-git config --global format.pretty oneline
+git config --global format.pretty "%Cred%h%C(white) - %Cblue%an: %C(white)%s %Cgreen(%cr)%Creset"
 git config --global core.autocrl input
 git config --global core.fileMode true
 
@@ -48,6 +48,7 @@ export PS1="\[\033[38m\]\u\[\033[32m\] \w \[\033[31m\]\`ruby -e \"print (%x{git 
 
 # shortcuts
 alias gc='git checkout'
+alias gcm='git checkout master'
 alias gp='git pull'
 alias gs='git status'
 alias gr='git reset --soft HEAD~1'
