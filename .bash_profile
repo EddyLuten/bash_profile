@@ -80,3 +80,11 @@ rbenv version >/dev/null
 if [ $? -eq 0 ]; then
   eval "$(rbenv init -)"
 fi
+
+########## hitch setup
+hitch() {
+  command hitch "$@"
+  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
+}
+alias unhitch='hitch -u'
+
