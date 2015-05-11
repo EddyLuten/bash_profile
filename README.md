@@ -23,6 +23,8 @@ Something like:
 * `reload_profile` - reloads the `.bash_profile` file
 * `trash` - moves a file to the trash
 * `empty_trash` - empties the trash
+* `hitch` - an alias for using [hitch](https://github.com/therubymug/hitch).
+* `unhitch` - the opposite of `hitch`
 
 ## Rails Related Aliases
 * `t` - clears the screen and runs `rake spec`
@@ -32,6 +34,7 @@ Something like:
 * `outgoing` - shows outgoing commits to origin for the current branch
 * `dirty-branches` - shows which branches are already merged into master and can be deleted
 * `clean-branches` - deletes the dirty branches
+* `push-branch` - pushes the current branch to origin (`git push --set-upstream...`)
 * `gc` - alias for `git checkout`
 * `gcm` - alias for `git checkout master`
 * `gp` - alias for `git pull`
