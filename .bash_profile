@@ -25,7 +25,8 @@ git config --global alias.incoming "!(git fetch --quiet && git log --pretty=form
 git config --global alias.outgoing "!(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)"
 git config --global alias.dirty-branches '!(git branch --merged master | grep -v master)'
 git config --global alias.clean-branches '!(git branch --merged master | grep -v master | xargs -n 1 git branch -d)'
- 
+git config --global alias.push-branch '!(git rev-parse --abbrev-ref HEAD | xargs -J % git push --set-upstream origin %)'
+
 # git auto-completion
 if [ ! -f ~/git-completion.bash ]; then
   echo 'Downloading: git-completion.bash...'
@@ -87,4 +88,3 @@ hitch() {
   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
 }
 alias unhitch='hitch -u'
-
