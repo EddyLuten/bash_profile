@@ -50,6 +50,7 @@ export PS1="\[\033[38m\]\u\[\033[32m\] \w \[\033[31m\]\`ruby -e \"print (%x{git 
 # shortcuts
 alias gc='git checkout'
 alias gcm='git checkout master'
+alias gcd='git checkout development'
 alias gp='git pull'
 alias gs='git status'
 alias gr='git reset --soft HEAD~1'
