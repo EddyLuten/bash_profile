@@ -37,6 +37,7 @@ Something like:
 * `push-branch` - pushes the current branch to origin (`git push --set-upstream...`)
 * `gc` - alias for `git checkout`
 * `gcm` - alias for `git checkout master`
+* `gcd` - alias for `git checkout development`
 * `gp` - alias for `git pull`
 * `gs` - alias for `git status`
 * `gr` - undoes the latest local commit and stages the files
