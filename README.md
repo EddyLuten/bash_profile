@@ -10,8 +10,8 @@ Something like:
 
 ## What it does
 1. Sets your default editor to vim
-2. Adds git auto completion
-3. Modifies the prompt to show git related information
+2. Adds [git auto completion](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
+3. Modifies the prompt [to show git related information](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
 4. If rbenv is available, will initialize it
 5. Introduces many aliases (see below for a list)
 
