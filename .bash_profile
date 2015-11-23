@@ -10,6 +10,9 @@ alias cls='clear'
 alias ls='ls -f1 -FGahp'
 alias ll='ls -l'
 alias t='cls;rake spec'
+alias bu='bundle update'
+alias bi='bundle install'
+alias fs='foreman start'
 reload_profile() { source ~/.bash_profile; }
 
 ########## git
@@ -78,7 +81,7 @@ empty_trash() {
 ########## ruby / rails / etc.
 
 # check if rbenv is installed and init
-rbenv version >/dev/null
+which rbenv >/dev/null
 if [ $? -eq 0 ]; then
   eval "$(rbenv init -)"
 fi
@@ -92,3 +95,9 @@ alias unhitch='hitch -u'
 
 ########## set JAVA_HOME
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+########## self-update
+update_profile() {
+  (cd ~/bash_profile && git pull) >/dev/null
+  reload_profile
+}

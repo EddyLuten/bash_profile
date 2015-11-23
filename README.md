@@ -16,12 +16,16 @@ Something like:
 5. Introduces many aliases (see below for a list)
 
 ## General Aliases
+* `bi` - alias for `bundle install`
+* `bu` - alias for `bundle update`
+* `fs` - alias for `foreman start`
 * `cd..` - alias for `cd ..`
 * `cls` - alias for `clear`
 * `ls` - alias for `ls -f1 -FGahp`
 * `ll` - alias for `ls -l`
 * `reload_profile` - reloads the `.bash_profile` file
-* `trash` - moves a file to the trash
+* `update_profile` - `git pull` in the `~/bash_profile` directory and reloads
+* `trash` - moves a file (or anything matching a glob pattern) to the trash
 * `empty_trash` - empties the trash
 * `hitch` - an alias for using [hitch](https://github.com/therubymug/hitch).
 * `unhitch` - the opposite of `hitch`
